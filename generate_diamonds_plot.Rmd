@@ -7,7 +7,7 @@ date: "2024-08-12"
 ```{r, echo=FALSE}
 datetime_label <- glue::glue("{lubridate::date(Sys.time())} {lubridate::minute(Sys.time())}:{lubridate::hour(Sys.time())}")
 
-ggplot2::diamonds %>% 
+ggplot2::diamonds |> 
   ggplot() + 
   geom_point(aes(x = carat, y = price, group = color, color = color)) + 
   geom_text(aes(x = 4, y = 0), label = datetime_label)
